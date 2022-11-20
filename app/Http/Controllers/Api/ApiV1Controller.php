@@ -2616,7 +2616,7 @@ class ApiV1Controller extends Controller
 		}
 
 		if(!$status) {
-			abort(500, 'An error occured.');
+			abort(500, 'An error occurred.');
 		}
 
 		NewStatusPipeline::dispatch($status);
