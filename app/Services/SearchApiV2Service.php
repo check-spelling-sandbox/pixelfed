@@ -89,8 +89,8 @@ class SearchApiV2Service
 		$rawQuery = $initalQuery ? $initalQuery : $this->query->input('q');
 		$query = '%' . $rawQuery . '%';
 		if(Str::substrCount($rawQuery, '@') >= 1 && Str::contains($rawQuery, config('pixelfed.domain.app'))) {
-			$deliminatorCount = Str::substrCount($rawQuery, '@');
-			$query = explode('@', $rawQuery)[$deliminatorCount == 1 ? 0 : 1];
+			$delimiterCount = Str::substrCount($rawQuery, '@');
+			$query = explode('@', $rawQuery)[$delimiterCount == 1 ? 0 : 1];
 		}
 		if(Str::substrCount($rawQuery, '@') == 1 && substr($rawQuery, 0, 1) == '@') {
 			$query = substr($rawQuery, 1) . '%';
