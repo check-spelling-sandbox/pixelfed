@@ -152,7 +152,7 @@
 										<div class="d-flex justify-content-between">
 											<a class="font-weight-bold small text-muted" href="#" @click.prevent="altTextEditIndex = undefined">Close</a>
 											<p class="help-text small mb-0">
-												{{ fields.media[idx].description ? fields.media[idx].description.length : 0 }}/{{config.uploader.max_altext_length}}
+												{{ fields.media[idx].description ? fields.media[idx].description.length : 0 }}/{{config.uploader.max_alttext_length}}
 											</p>
 										</div>
 									</div>
@@ -540,7 +540,7 @@
 					if(err.response.data.hasOwnProperty('error')) {
 						swal('Error', err.response.data.error, 'error');
 					} else {
-						swal('Error', 'An error occured, please try again later', 'error');
+						swal('Error', 'An error occurred, please try again later', 'error');
 					}
 					console.log(err);
 				})
